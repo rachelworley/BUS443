@@ -1,0 +1,100 @@
+{% extends "students/base.html" %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home Page</title>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet", type="text/css", href="{% static 'final/css/students/style.css' %}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	</head>
+	<body>
+
+   <div>
+    <div class="jumbotron text-center text-white jumbotron-image shadow" style="background-image: url(https://images.unsplash.com/photo-1552152974-19b9caf99137?fit=crop&w=1350&q=80);">
+	</br>
+      <h1>Home</h1>
+	  <p><i>Draco dormiens nunquam titillandus</i> </p>
+    </div>
+	<div class="container">
+		<h5> Welcome to the Hogwarts Portal Home Page!</h5>
+		<p> This page houses all the information regarding our current wizard student body. We are exeedingly proud of our students and their accomplishments. Below one can find statistics regarding the excellence of the academy.</p>
+	</div> 
+	<div class="container" style="text-align: center;">
+	  <div class="p-3 mb-2 bg-dark text-white">Wizard Statistics</div>
+    </div></br>
+		<div class="container">
+				<div class="card-deck">
+					<div class="card">
+					  <div class="card-body">
+						<h5 class="card-title" style="text-align: center;">Number of Students</h5>
+						<hr class="cardboarder" width="80">
+						<p class="card-text" style="text-align: center;" >20</p>
+					  </div>
+					 </div>
+				
+					<div class="card">
+					  <div class="card-body">
+						<h5 class="card-title" style="text-align: center;">Average GPA</h5>
+					<hr class="cardboarder" width="80">
+						<p class="card-text" style="text-align: center;" >3.6</p>
+					  </div>
+					 </div>
+					 
+					 <div class="card">
+					  <div class="card-body">
+						<h5 class="card-title" style="text-align: center;">Number of Courses</h5>
+						<hr class="cardboarder" width="80">
+						<p class="card-text" style="text-align: center;">19</p>
+					  </div>
+					 </div>
+				</div>
+			</div>			   
+		</div>
+
+    
+		</br>
+		<div class="container">
+			<div class= "card">
+				<div class="card text-center">
+					<div class="p-3 mb-2 bg-dark text-white">Number of Wizards by Class</div>
+						<div id="piechart" style='width: 900px; height: 400px; display: block; margin: 0 auto;'</div>
+
+							<script type="text/javascript">
+							// Load google charts
+							google.charts.load('current', {'packages':['corechart']});
+							google.charts.setOnLoadCallback(drawChart);
+
+							// Draw the chart and set the chart values
+							function drawChart() {
+							var data = google.visualization.arrayToDataTable([
+							['Class', 'Number of Students'],
+							['Senior', 7],
+							['Junior', 7],
+							['Sophmore', 6],
+							['Freshman', 0]
+							]);
+
+							var options = {'title':'Hogwarts Student Body'};
+
+							var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+							chart.draw(data, options);
+							}
+							</script></br>
+						</div>
+					</div> 
+				</div>
+			</div>
+		</div> </br> 
+		<footer class="container-fluid text-center">
+			<p> | Hogwarts Academy | 2021 | </p> 
+		</footer>
+	</body>		
+{% endblock %}

@@ -1,0 +1,32 @@
+ 
+ .card-text
+{
+	font-size: 45px;
+	margin-bottom: -45px;
+	margin-top: -15px;
+	text-align: center;
+}
+
+.card-body
+{
+	padding: 20px;
+}
+
+.card
+{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+h1 {
+	color:brown;
+}
+
+footer {
+	background-color: #555;
+	color:black;
+	padding: 15px;
+  }
